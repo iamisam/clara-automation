@@ -3,43 +3,45 @@
   "company_name": "Ben's Electric Solutions",
   "business_hours": {
     "days": "Monday to Friday",
-    "start": "8",
-    "end": "430",
+    "start": "8:00",
+    "end": "4:30",
     "timezone": null
   },
-  "office_address": "Ben@Benselectricsolutionsteam.com",
-  "services_supported": [],
-  "emergency_definition": [
-    "GAS STATIONS"
+  "office_address": "Ben Penoyer",
+  "services_supported": [
+    "Property management",
+    "Pressure washing",
+    "Landscaping"
   ],
+  "emergency_definition": [],
   "emergency_routing_rules": {
     "who_to_call": "Ben",
     "order": null,
-    "fallback": null
+    "fallback": "GNM property management company"
   },
   "non_emergency_routing_rules": {
-    "Monday to Friday": {
-      "who_to_call": "Ben",
-      "order": null,
-      "fallback": null
-    }
+    "timeouts": null,
+    "retries": 1,
+    "error_message": null
   },
   "call_transfer_rules": {
     "timeouts": null,
     "retries": null,
     "error_message": null
   },
-  "integration_constraints": [],
-  "after_hours_flow_summary": "Properties that they manage. Gas stations.",
-  "office_hours_flow_summary": "Main line. We can have the setting already.",
+  "integration_constraints": [
+    "Chevron"
+  ],
+  "after_hours_flow_summary": "Patch through to Ben",
+  "office_hours_flow_summary": "Answer the calls",
   "questions_or_unknowns": [
     "business_hours.timezone",
-    "services_supported",
+    "emergency_definition",
     "emergency_routing_rules.order",
-    "emergency_routing_rules.fallback",
+    "non_emergency_routing_rules.timeouts",
+    "non_emergency_routing_rules.error_message",
     "call_transfer_rules.timeouts",
     "call_transfer_rules.retries",
-    "call_transfer_rules.error_message",
-    "integration_constraints"
+    "call_transfer_rules.error_message"
   ]
 }

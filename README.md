@@ -236,7 +236,7 @@ Access: http://localhost:8501
 
 ## 🎥 Video Demo
 
-📹 **Loom Video:** [https://www.loom.com/share/your-video-id]
+📹 **Video Demo:** [https://drive.google.com/file/d/19Hc_3PcJHj1_ryFCnKJazBgRhh-5TCll/view?usp=sharing]
 
 **Demo covers:**
 1. File structure setup

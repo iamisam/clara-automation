@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-n8n}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-n8n_pass}
+      - POSTGRES_DB=${POSTGRES_DB:-n8n_data}
+    volumes:
+      - n8n_db_storage:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U n8n"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  n8n:
+    image: n8nio/n8n:latest
+    restart: always
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_DATABASE=${POSTGRES_DB:-n8n_data}
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_USER=${POSTGRES_USER:-n8n}
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD:-n8n_pass}
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+      - EXTRA_HOSTS=host.docker.internal:host-gateway
+      - N8N_BLOCK_NODES_EXECUTION_=false
+      - EXECUTIONS_MODE=regular
+      - N8N_RUNNERS_ENABLED=true
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n_storage:/home/node/.n8n
+      - /usr/bin/python3:/usr/bin/python3:ro
+      - ~/.local:/root/.local:ro
+      - ./dataset:/home/node/dataset
+      - ./outputs:/home/node/outputs
+      - ./workflows:/home/node/workflows
+      - ./scripts:/home/node/scripts
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  n8n_storage:
+  n8n_db_storage:

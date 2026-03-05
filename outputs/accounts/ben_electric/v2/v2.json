@@ -1,0 +1,45 @@
+{
+  "account_id": "ben_electric",
+  "company_name": "Ben's Electric Solutions",
+  "business_hours": {
+    "days": "Monday to Friday",
+    "start": "8",
+    "end": "430",
+    "timezone": null
+  },
+  "office_address": "Ben@Benselectricsolutionsteam.com",
+  "services_supported": [],
+  "emergency_definition": [
+    "GAS STATIONS"
+  ],
+  "emergency_routing_rules": {
+    "who_to_call": "Ben",
+    "order": null,
+    "fallback": null
+  },
+  "non_emergency_routing_rules": {
+    "Monday to Friday": {
+      "who_to_call": "Ben",
+      "order": null,
+      "fallback": null
+    }
+  },
+  "call_transfer_rules": {
+    "timeouts": null,
+    "retries": null,
+    "error_message": null
+  },
+  "integration_constraints": [],
+  "after_hours_flow_summary": "Properties that they manage. Gas stations.",
+  "office_hours_flow_summary": "Main line. We can have the setting already.",
+  "questions_or_unknowns": [
+    "business_hours.timezone",
+    "services_supported",
+    "emergency_routing_rules.order",
+    "emergency_routing_rules.fallback",
+    "call_transfer_rules.timeouts",
+    "call_transfer_rules.retries",
+    "call_transfer_rules.error_message",
+    "integration_constraints"
+  ]
+}

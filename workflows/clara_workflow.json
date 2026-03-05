@@ -1,0 +1,66 @@
+{
+  "name": "clara_workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://192.168.196.51:5000/batch",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        112,
+        -32
+      ],
+      "id": "8462eb31-5853-45bf-9711-f646cf433537",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        -32
+      ],
+      "id": "606ebb8c-ca44-445d-8e8e-1a881253e0d4",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "52b87ab0-c2f1-4739-a815-4e4d138c44db",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "60430911dc232f0630fdc1086462f53a982d71a10a268176fc1c13ba348b2df9"
+  },
+  "id": "GIN6CnF1RKehbkIq",
+  "tags": []
+}

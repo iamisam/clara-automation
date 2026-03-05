@@ -1,0 +1,28 @@
+{
+  "account_id": "ben_electric",
+  "company_name": "Ben's Electric Solutions",
+  "business_hours": {
+    "days": null,
+    "start": null,
+    "end": null,
+    "timezone": null
+  },
+  "office_address": "Ben@Benselectricsolutionsteam.com",
+  "services_supported": [],
+  "emergency_definition": [],
+  "emergency_routing_rules": {
+    "who_to_call": null,
+    "order": null,
+    "fallback": null
+  },
+  "non_emergency_routing_rules": null,
+  "call_transfer_rules": {
+    "timeouts": null,
+    "retries": null,
+    "error_message": null
+  },
+  "integration_constraints": [],
+  "after_hours_flow_summary": null,
+  "office_hours_flow_summary": null,
+  "questions_or_unknowns": []
+}
